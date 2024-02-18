@@ -1,6 +1,7 @@
-[gd_scene load_steps=51 format=3 uid="uid://dtkpqjvyaewkr"]
+[gd_scene load_steps=52 format=3 uid="uid://dtkpqjvyaewkr"]
 
 [ext_resource type="Texture2D" uid="uid://bx3l5hk0lxqi8" path="res://Assets/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00000.png" id="1_4mxf2"]
+[ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_yc2ov"]
 [ext_resource type="Texture2D" uid="uid://ni8s3i5vmg8p" path="res://Assets/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00001.png" id="2_belf5"]
 [ext_resource type="Texture2D" uid="uid://b0iswtxrhonl8" path="res://Assets/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00002.png" id="3_xn8p3"]
 [ext_resource type="Texture2D" uid="uid://do4vyj2ejlve8" path="res://Assets/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00003.png" id="4_3wt0n"]
@@ -217,6 +218,7 @@ size = Vector2(94, 222)
 [node name="Player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_yc2ov")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_gt2rs")
@@ -226,3 +228,6 @@ frame_progress = 0.790527
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, 35)
 shape = SubResource("RectangleShape2D_g5c58")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(0.5, 0.5)

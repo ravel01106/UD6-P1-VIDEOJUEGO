@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://vwv1h5uwbuia"]
+
+[ext_resource type="Texture2D" uid="uid://ni8s3i5vmg8p" path="res://Assets/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00001.png" id="1_5c3ok"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(542, 316)
+texture = ExtResource("1_5c3ok")

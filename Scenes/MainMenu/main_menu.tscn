@@ -1,0 +1,189 @@
+[gd_scene load_steps=16 format=3 uid="uid://cgxx0x7s5l5x8"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_bl2ra"]
+[ext_resource type="Texture2D" uid="uid://bufp4jnf7bivc" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0011_0.png" id="1_cuf04"]
+[ext_resource type="Texture2D" uid="uid://cnj8x4vaf81ve" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0010_1.png" id="2_ndond"]
+[ext_resource type="Texture2D" uid="uid://dvhulg7wd0q5l" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0009_2.png" id="3_coqkf"]
+[ext_resource type="Texture2D" uid="uid://c5s8sfjmo63nk" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0008_3.png" id="4_fyhw1"]
+[ext_resource type="Texture2D" uid="uid://dommlqajkia5w" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0007_Lights.png" id="5_dabtj"]
+[ext_resource type="Texture2D" uid="uid://dq3dd81fxqjnq" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0006_4.png" id="6_m48f8"]
+[ext_resource type="Texture2D" uid="uid://d0ac6wnl13tnb" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0005_5.png" id="7_ltl6u"]
+[ext_resource type="Texture2D" uid="uid://bo50w8rc2tvfy" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0004_Lights.png" id="8_vfi20"]
+[ext_resource type="Texture2D" uid="uid://bjrbiahk0vpx0" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0003_6.png" id="9_phuix"]
+[ext_resource type="Texture2D" uid="uid://dr2cs0q1kvg5s" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0002_7.png" id="10_kni54"]
+[ext_resource type="Texture2D" uid="uid://csjb04ywbnmo5" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0001_8.png" id="11_y50a4"]
+[ext_resource type="Texture2D" uid="uid://bmvxdf81fwen2" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0000_9.png" id="12_3oxsh"]
+
+[sub_resource type="SystemFont" id="SystemFont_qbix2"]
+font_names = PackedStringArray("Open Sans")
+
+[sub_resource type="SystemFont" id="SystemFont_tqdx1"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bl2ra")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(0, 100)
+transform = Transform2D(1, 0, 0, 1, 0, 100)
+
+[node name="ParallaxLayer12" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer12"]
+position = Vector2(575, -144)
+scale = Vector2(2, 2)
+texture = ExtResource("1_cuf04")
+
+[node name="ParallaxLayer11" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer11"]
+position = Vector2(575, -144)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ndond")
+
+[node name="ParallaxLayer10" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer10"]
+position = Vector2(575, -144)
+scale = Vector2(2, 2)
+texture = ExtResource("3_coqkf")
+
+[node name="ParallaxLayer9" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer9"]
+position = Vector2(575, -144)
+scale = Vector2(2, 2)
+texture = ExtResource("4_fyhw1")
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
+position = Vector2(575, -144)
+scale = Vector2(2, 2)
+texture = ExtResource("5_dabtj")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+position = Vector2(575, -144)
+scale = Vector2(2, 2)
+texture = ExtResource("6_m48f8")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2(575, -144)
+scale = Vector2(2, 2)
+texture = ExtResource("7_ltl6u")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(575, -144)
+texture = ExtResource("8_vfi20")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(575, -144)
+scale = Vector2(2, 2)
+texture = ExtResource("9_phuix")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(575, -144)
+scale = Vector2(2, 2)
+texture = ExtResource("10_kni54")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(575, -144)
+scale = Vector2(2, 2)
+texture = ExtResource("11_y50a4")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(575, -144)
+scale = Vector2(2, 2)
+texture = ExtResource("12_3oxsh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.462745, 0.317647, 1)
+theme_override_colors/font_outline_color = Color(0.0901961, 0.117647, 0.196078, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_qbix2")
+theme_override_font_sizes/font_size = 64
+text = "Duids Quest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_tqdx1")
+theme_override_font_sizes/font_size = 30
+text = "Start Game"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_tqdx1")
+theme_override_font_sizes/font_size = 30
+text = "Exit
+"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(600, 280)
+zoom = Vector2(0.8, 0.8)
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

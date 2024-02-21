@@ -44070,7 +44070,7 @@ sources/0 = SubResource("TileSetAtlasSource_ajmiy")
 [node name="layer 0" type="ParallaxLayer" parent="Platform/ParallaxBackground"]
 
 [node name="Player" parent="Platform/ParallaxBackground/layer 0" instance=ExtResource("1_lpphy")]
-position = Vector2(-216, 416)
+position = Vector2(-140, 395)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platform/ParallaxBackground/layer 0"]
 position = Vector2(0, -72)

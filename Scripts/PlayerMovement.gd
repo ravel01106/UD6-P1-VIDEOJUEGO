@@ -48,3 +48,6 @@ func update_animations(direction):
 			_animated_sprite.play("jump") 
 		elif velocity.y > 0:
 			_animated_sprite.play("fall")
+			
+func respawn():
+	get_tree().reload_current_scene()

@@ -17,4 +17,5 @@ func _on_top_body_entered(body):
 		queue_free()
 
 func _on_sides_body_entered(body):
-	pass # Replace with function body.
+	if body.get_name() == "Player":
+		body.respawn()

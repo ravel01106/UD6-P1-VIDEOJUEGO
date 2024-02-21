@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
 const SPEED = 400.0
-const JUMP_VELOCITY = -450.0
+const JUMP_VELOCITY = -600.0
 
 @onready var _animated_sprite = $AnimatedSprite2D
+@onready var _label_counter = $Camera2D/Label
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var customGravity = 1000
+var counter = 0
 
 
 func _physics_process(delta):
@@ -39,3 +41,7 @@ func update_animations(direction):
 			
 func respawn():
 	get_tree().reload_current_scene()
+	
+func change_counter():
+	counter = counter+1
+	_label_counter.text = "Enemies killed: " + str(counter)

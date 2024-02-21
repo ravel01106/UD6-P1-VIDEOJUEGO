@@ -27,6 +27,7 @@ func flip():
 func _on_top_body_entered(body):
 	if body.get_name() == "Player":
 		queue_free()
+		body.change_counter()
 
 func _on_sides_body_entered(body):
 	if body.get_name() == "Player":

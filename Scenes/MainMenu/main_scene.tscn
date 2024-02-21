@@ -44065,33 +44065,43 @@ sources/0 = SubResource("TileSetAtlasSource_ajmiy")
 
 [node name="Platform" type="Node2D" parent="."]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Platform"]
-
-[node name="layer 0" type="ParallaxLayer" parent="Platform/ParallaxBackground"]
-
-[node name="Player" parent="Platform/ParallaxBackground/layer 0" instance=ExtResource("1_lpphy")]
+[node name="Player" parent="Platform" instance=ExtResource("1_lpphy")]
 position = Vector2(-140, 395)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Platform/ParallaxBackground/layer 0"]
+[node name="Enemy" parent="Platform" instance=ExtResource("3_rgi82")]
+position = Vector2(501, 510)
+
+[node name="-1" type="CanvasLayer" parent="Platform"]
+
+[node name="0" type="CanvasLayer" parent="Platform"]
+follow_viewport_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform/0"]
 position = Vector2(0, -72)
 
-[node name="Sprite2D" type="Sprite2D" parent="Platform/ParallaxBackground/layer 0/StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Platform/0/StaticBody2D"]
 position = Vector2(252, 824)
 scale = Vector2(2.32, 0.512)
 texture = ExtResource("3_ds51c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/ParallaxBackground/layer 0/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/0/StaticBody2D"]
 position = Vector2(252, 824)
 scale = Vector2(2.316, 0.5)
 shape = SubResource("RectangleShape2D_0q3mt")
 
-[node name="Enemy" parent="Platform/ParallaxBackground/layer 0" instance=ExtResource("3_rgi82")]
-position = Vector2(501, 510)
+[node name="1" type="CanvasLayer" parent="Platform"]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.1
 
-[node name="layer 1" type="ParallaxLayer" parent="Platform/ParallaxBackground"]
-
-[node name="TileMap" type="TileMap" parent="Platform/ParallaxBackground/layer 1"]
+[node name="TileMap" type="TileMap" parent="Platform/1"]
 modulate = Color(1, 1, 1, 0.415686)
 tile_set = SubResource("TileSet_ljp38")
 format = 2
 layer_0/tile_data = PackedInt32Array(131071, 0, 0, 196607, 0, 1, 262143, 0, 2, 65536, 65536, 0, 131072, 65536, 1, 196608, 65536, 2, 65537, 131072, 0, 131073, 131072, 1, 196609, 131072, 2)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Platform"]
+visible = false
+
+[node name="layer 0" type="ParallaxLayer" parent="Platform/ParallaxBackground"]
+
+[node name="layer 1" type="ParallaxLayer" parent="Platform/ParallaxBackground"]

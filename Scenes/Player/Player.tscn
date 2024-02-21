@@ -54,6 +54,23 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("25_lasb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_vc1e5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_jmt51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6gq6p")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_4mxf2")
 }, {
 "duration": 1.0,
@@ -129,22 +146,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("24_pgvcm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_lasb1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_vc1e5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_jmt51")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_6gq6p")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
-"speed": 12.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -222,8 +227,7 @@ script = ExtResource("1_yc2ov")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_gt2rs")
-animation = &"jump"
-frame_progress = 0.790527
+animation = &"fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, 35)

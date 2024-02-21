@@ -158,7 +158,11 @@ shape = SubResource("RectangleShape2D_w2xns")
 [node name="Sides" type="Area2D" parent="CharacterBody2D"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D/Sides"]
-polygon = PackedVector2Array(-122, 96, -149, 25, -121, -35, 120, -35, 149, 20, 120, 94)
+polygon = PackedVector2Array(-112, 96, -144, 56, -149, 25, -144, -32, -121, -35, 120, -35, 144, -24, 149, 20, 144, 56, 112, 96)
+
+[node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D"]
+position = Vector2(-152, 0)
+target_position = Vector2(0, 120)
 
 [connection signal="body_entered" from="CharacterBody2D/Top" to="CharacterBody2D" method="_on_top_body_entered"]
 [connection signal="body_entered" from="CharacterBody2D/Sides" to="CharacterBody2D" method="_on_sides_body_entered"]

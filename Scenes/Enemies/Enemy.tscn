@@ -160,6 +160,10 @@ shape = SubResource("RectangleShape2D_w2xns")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D/Sides"]
 polygon = PackedVector2Array(-112, 96, -144, 56, -149, 25, -144, -32, -121, -35, 120, -35, 144, -24, 149, 20, 144, 56, 112, 96)
 
+[node name="RayCast2D2" type="RayCast2D" parent="CharacterBody2D"]
+position = Vector2(-152, 0)
+target_position = Vector2(-25, 0)
+
 [node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D"]
 position = Vector2(-152, 0)
 target_position = Vector2(0, 120)

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @onready var _animated_enemy_sprite = $AnimatedSprite2D
 
-var speed = -25
+var speed = -100
 var facing_right = false
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -11,7 +11,7 @@ func _physics_process(_delta):
 	if not is_on_floor():
 		velocity.y += gravity * _delta
 		
-	if !$RayCast2D.is_colliding() && is_on_floor():
+	if (!$RayCast2D.is_colliding() || $RayCast2D2.is_colliding()) && is_on_floor():
 		flip()
 	velocity.x = speed
 	move_and_slide()

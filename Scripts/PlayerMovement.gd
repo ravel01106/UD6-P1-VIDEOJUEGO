@@ -17,16 +17,26 @@ func _physics_process(delta):
 		velocity.y += customGravity * delta
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		$JumpAudio.play()
 		velocity.y = JUMP_VELOCITY
 
 	var direction = Input.get_axis("ui_left", "ui_right")
 	velocity.x = direction * SPEED
-	
+
 	if direction != 0:
 		_animated_sprite.flip_h = (direction == -1)
 	update_animations(direction)
 
 	move_and_slide()
+	walk_sound(velocity)
+
+func walk_sound(velocity):
+	if velocity.x != 0 and is_on_floor():
+		if (Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right")):
+			$WalkAudio.play()
+	else:
+		$WalkAudio.stop()
+
 func update_animations(direction):
 	if is_on_floor():
 		if direction == 0:
@@ -35,15 +45,15 @@ func update_animations(direction):
 			_animated_sprite.play("walk")
 	else:
 		if velocity.y < 0:
-			_animated_sprite.play("jump") 
+			_animated_sprite.play("jump")
 		elif velocity.y > 0:
 			_animated_sprite.play("fall")
-			
+
 func respawn():
 	get_tree().reload_current_scene()
-	
+
 func change_counter():
 	counter = counter+1
 	_label_counter.text = "Enemies killed: " + str(counter)
-	
-	
+
+

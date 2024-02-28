@@ -10,7 +10,7 @@ func _physics_process(_delta):
 	_animated_enemy_sprite.play("idle")
 	if not is_on_floor():
 		velocity.y += gravity * _delta
-		
+
 	if (!$RayCast2D.is_colliding() || $RayCast2D2.is_colliding()) && is_on_floor():
 		flip()
 	velocity.x = speed
@@ -26,8 +26,10 @@ func flip():
 
 func _on_top_body_entered(body):
 	if body.get_name() == "Player":
-		queue_free()
+		$deadAudio.playing = true
+		await get_tree().create_timer(0.1).timeout
 		body.change_counter()
+		queue_free()
 
 func _on_sides_body_entered(body):
 	if body.get_name() == "Player":

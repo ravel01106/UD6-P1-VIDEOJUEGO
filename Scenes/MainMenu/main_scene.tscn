@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://vwv1h5uwbuia"]
+[gd_scene load_steps=5 format=3 uid="uid://vwv1h5uwbuia"]
 
 [ext_resource type="PackedScene" uid="uid://dtkpqjvyaewkr" path="res://Scenes/Player/Player.tscn" id="1_lpphy"]
+[ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_xiegu"]
+[ext_resource type="AudioStream" uid="uid://clm3ba1h2i3t2" path="res://Assets/Sounds/firstLevel.mp3" id="4_08adg"]
 [ext_resource type="PackedScene" uid="uid://dkicjnjwbmipd" path="res://Scenes/Worlds/WorldOne.tscn" id="5_us3tf"]
 
 [node name="MainScene" type="Node2D"]
+script = ExtResource("1_xiegu")
 
 [node name="Player" parent="." instance=ExtResource("1_lpphy")]
-position = Vector2(-3328, -328)
+position = Vector2(-2776, -32)
 
 [node name="WorldOne" parent="." instance=ExtResource("5_us3tf")]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_08adg")
+volume_db = -20.6

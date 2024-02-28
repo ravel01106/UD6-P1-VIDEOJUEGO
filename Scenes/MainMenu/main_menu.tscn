@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cgxx0x7s5l5x8"]
+[gd_scene load_steps=17 format=3 uid="uid://cgxx0x7s5l5x8"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_bl2ra"]
 [ext_resource type="Texture2D" uid="uid://bufp4jnf7bivc" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0011_0.png" id="1_cuf04"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dr2cs0q1kvg5s" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0002_7.png" id="10_kni54"]
 [ext_resource type="Texture2D" uid="uid://csjb04ywbnmo5" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0001_8.png" id="11_y50a4"]
 [ext_resource type="Texture2D" uid="uid://bmvxdf81fwen2" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0000_9.png" id="12_3oxsh"]
+[ext_resource type="AudioStream" uid="uid://ctodbjk08r6pn" path="res://Assets/Sounds/IntroMenu.mp3" id="14_1mvyu"]
 
 [sub_resource type="SystemFont" id="SystemFont_qbix2"]
 font_names = PackedStringArray("Open Sans")
@@ -185,5 +186,9 @@ text = "Exit
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(600, 280)
 zoom = Vector2(0.8, 0.8)
+
+[node name="MusicMenuAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_1mvyu")
+volume_db = -20.6
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

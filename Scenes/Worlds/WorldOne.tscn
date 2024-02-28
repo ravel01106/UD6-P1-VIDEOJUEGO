@@ -1,8 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://dkicjnjwbmipd"]
+[gd_scene load_steps=27 format=3 uid="uid://dkicjnjwbmipd"]
 
+[ext_resource type="Texture2D" uid="uid://dvusmu4n2qocy" path="res://Assets/Background/primeraCapa.png" id="1_1l2me"]
 [ext_resource type="Texture2D" uid="uid://c1mwjh0m5yxtt" path="res://Assets/Platform/blackBlock.png" id="1_hjp50"]
+[ext_resource type="Texture2D" uid="uid://dbelvtym0x75t" path="res://Assets/Background/segundaCapa.png" id="2_12u36"]
 [ext_resource type="PackedScene" uid="uid://b55fdvetm7c2m" path="res://Scenes/Enemies/Enemy.tscn" id="3_0xxsa"]
+[ext_resource type="Texture2D" uid="uid://bvqvxedlpoa8" path="res://Assets/Background/terceraCapa.png" id="3_js032"]
 [ext_resource type="Texture2D" uid="uid://dtccfjesauu6d" path="res://Assets/Mossy Tileset/Mossy - TileSet.png" id="3_wlxp6"]
+[ext_resource type="Texture2D" uid="uid://bwmhbdbaisxkd" path="res://Assets/Background/cuartaCapa.png" id="4_gf0ye"]
+[ext_resource type="Texture2D" uid="uid://ccakmiifx1bek" path="res://Assets/Background/quintaCapa.png" id="5_ndmdu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qaoxn"]
 texture = ExtResource("3_wlxp6")
@@ -44131,6 +44136,61 @@ size = Vector2(1021, 613)
 
 [node name="WorldOne" type="Node2D"]
 
+[node name="-5" type="CanvasLayer" parent="."]
+layer = -5
+offset = Vector2(13000, -1500)
+scale = Vector2(4, 3.5)
+transform = Transform2D(4, 0, 0, 3.5, 13000, -1500)
+follow_viewport_enabled = true
+follow_viewport_scale = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="-5"]
+texture = ExtResource("1_1l2me")
+
+[node name="-4" type="CanvasLayer" parent="."]
+layer = -4
+offset = Vector2(13000, -1500)
+scale = Vector2(4, 3.5)
+transform = Transform2D(4, 0, 0, 3.5, 13000, -1500)
+follow_viewport_enabled = true
+follow_viewport_scale = 0.6
+
+[node name="Sprite2D" type="Sprite2D" parent="-4"]
+texture = ExtResource("2_12u36")
+
+[node name="-3" type="CanvasLayer" parent="."]
+layer = -3
+offset = Vector2(13000, -1500)
+scale = Vector2(4, 3.5)
+transform = Transform2D(4, 0, 0, 3.5, 13000, -1500)
+follow_viewport_enabled = true
+follow_viewport_scale = 0.7
+
+[node name="Sprite2D" type="Sprite2D" parent="-3"]
+texture = ExtResource("3_js032")
+
+[node name="-2" type="CanvasLayer" parent="."]
+layer = -2
+offset = Vector2(13000, -1500)
+scale = Vector2(4, 3.5)
+transform = Transform2D(4, 0, 0, 3.5, 13000, -1500)
+follow_viewport_enabled = true
+follow_viewport_scale = 0.8
+
+[node name="Sprite2D" type="Sprite2D" parent="-2"]
+texture = ExtResource("4_gf0ye")
+
+[node name="-1" type="CanvasLayer" parent="."]
+layer = -1
+offset = Vector2(13000, -1500)
+scale = Vector2(4, 3.5)
+transform = Transform2D(4, 0, 0, 3.5, 13000, -1500)
+follow_viewport_enabled = true
+follow_viewport_scale = 0.9
+
+[node name="Sprite2D" type="Sprite2D" parent="-1"]
+texture = ExtResource("5_ndmdu")
+
 [node name="1" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 follow_viewport_scale = 1.1
@@ -44507,7 +44567,3 @@ texture = ExtResource("1_hjp50")
 [node name="Plattform1Collision" type="CollisionShape2D" parent="0/Plattform10"]
 position = Vector2(27928, -1552)
 shape = SubResource("RectangleShape2D_uam5p")
-
-[node name="-1" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-follow_viewport_scale = 0.9

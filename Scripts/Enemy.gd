@@ -28,7 +28,7 @@ func _on_top_body_entered(body):
 	if body.get_name() == "Player":
 		$deadAudio.playing = true
 		await get_tree().create_timer(0.1).timeout
-		body.change_counter()
+		Global.enemyKilled(1)
 		queue_free()
 
 func _on_sides_body_entered(body):

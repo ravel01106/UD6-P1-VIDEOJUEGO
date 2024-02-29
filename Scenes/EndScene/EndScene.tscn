@@ -1,17 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbpyho1n3eqhg"]
+[gd_scene load_steps=10 format=3 uid="uid://cy6wwtxyds0ii"]
 
-[ext_resource type="Script" path="res://Scripts/EndScene.gd" id="1_i8q6e"]
-[ext_resource type="Texture2D" uid="uid://dvusmu4n2qocy" path="res://Assets/Background/primeraCapa.png" id="2_k043h"]
-[ext_resource type="Texture2D" uid="uid://dbelvtym0x75t" path="res://Assets/Background/segundaCapa.png" id="3_4fmvq"]
-[ext_resource type="Texture2D" uid="uid://bvqvxedlpoa8" path="res://Assets/Background/terceraCapa.png" id="4_r8pyv"]
-[ext_resource type="Texture2D" uid="uid://bwmhbdbaisxkd" path="res://Assets/Background/cuartaCapa.png" id="5_xycuj"]
-[ext_resource type="Texture2D" uid="uid://ccakmiifx1bek" path="res://Assets/Background/quintaCapa.png" id="6_yqbwp"]
-[ext_resource type="AudioStream" uid="uid://ctodbjk08r6pn" path="res://Assets/Sounds/IntroMenu.mp3" id="7_bg4jc"]
+[ext_resource type="Script" path="res://Scripts/EndScene.gd" id="1_33jdn"]
+[ext_resource type="AudioStream" uid="uid://ctodbjk08r6pn" path="res://Assets/Sounds/IntroMenu.mp3" id="2_xvi41"]
+[ext_resource type="Texture2D" uid="uid://dvusmu4n2qocy" path="res://Assets/Background/primeraCapa.png" id="3_6xgsw"]
+[ext_resource type="Texture2D" uid="uid://dbelvtym0x75t" path="res://Assets/Background/segundaCapa.png" id="4_4kr8n"]
+[ext_resource type="Texture2D" uid="uid://bvqvxedlpoa8" path="res://Assets/Background/terceraCapa.png" id="5_hacc5"]
+[ext_resource type="Texture2D" uid="uid://bwmhbdbaisxkd" path="res://Assets/Background/cuartaCapa.png" id="6_7h6o7"]
+[ext_resource type="Texture2D" uid="uid://ccakmiifx1bek" path="res://Assets/Background/quintaCapa.png" id="7_5b00q"]
 
-[sub_resource type="SystemFont" id="SystemFont_tq6he"]
+[sub_resource type="SystemFont" id="SystemFont_14rji"]
 font_names = PackedStringArray("Open Sans")
 
-[sub_resource type="SystemFont" id="SystemFont_7ksph"]
+[sub_resource type="SystemFont" id="SystemFont_annr7"]
 
 [node name="EndScene" type="Control"]
 layout_mode = 3
@@ -20,37 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_i8q6e")
-
-[node name="Background" type="ParallaxBackground" parent="."]
-offset = Vector2(500, 250)
-scale = Vector2(0.3, 0.3)
-transform = Transform2D(0.3, 0, 0, 0.3, 500, 250)
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer"]
-texture = ExtResource("2_k043h")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer2"]
-texture = ExtResource("3_4fmvq")
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer3"]
-texture = ExtResource("4_r8pyv")
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="Background"]
-
-[node name="Sprite2D2" type="Sprite2D" parent="Background/ParallaxLayer4"]
-texture = ExtResource("5_xycuj")
-
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="Background"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer5"]
-texture = ExtResource("6_yqbwp")
+script = ExtResource("1_33jdn")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -82,7 +52,7 @@ theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 30
 
 [node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -94,20 +64,22 @@ theme_override_colors/font_outline_color = Color(0.0901961, 0.117647, 0.196078, 
 theme_override_constants/shadow_offset_x = 6
 theme_override_constants/shadow_offset_y = 6
 theme_override_constants/outline_size = 24
-theme_override_fonts/font = SubResource("SystemFont_tq6he")
+theme_override_fonts/font = SubResource("SystemFont_14rji")
 theme_override_font_sizes/font_size = 64
-text = "The end"
+text = "You Won"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Info" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="EndInfo" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.2, 0.462745, 0.317647, 1)
 theme_override_colors/font_outline_color = Color(0.0901961, 0.117647, 0.196078, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = SubResource("SystemFont_tq6he")
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("SystemFont_14rji")
 theme_override_font_sizes/font_size = 25
-text = "You have won"
+text = "Prueba texto"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -126,14 +98,14 @@ layout_mode = 2
 [node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 30)
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_7ksph")
+theme_override_fonts/font = SubResource("SystemFont_annr7")
 theme_override_font_sizes/font_size = 30
-text = "Restart Game"
+text = "Start Game"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 30)
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_7ksph")
+theme_override_fonts/font = SubResource("SystemFont_annr7")
 theme_override_font_sizes/font_size = 30
 text = "Exit
 "
@@ -143,8 +115,38 @@ position = Vector2(-2145, -414)
 zoom = Vector2(1.2, 1.2)
 
 [node name="MusicMenuAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_bg4jc")
+stream = ExtResource("2_xvi41")
 volume_db = -20.6
+
+[node name="Background" type="ParallaxBackground" parent="."]
+offset = Vector2(500, 250)
+scale = Vector2(0.3, 0.3)
+transform = Transform2D(0.3, 0, 0, 0.3, 500, 250)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer"]
+texture = ExtResource("3_6xgsw")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer2"]
+texture = ExtResource("4_4kr8n")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer3"]
+texture = ExtResource("5_hacc5")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Background"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background/ParallaxLayer4"]
+texture = ExtResource("6_7h6o7")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="Background"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer5"]
+texture = ExtResource("7_5b00q")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

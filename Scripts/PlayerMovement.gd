@@ -8,8 +8,9 @@ const JUMP_VELOCITY = -1200.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var customGravity = 1000
-var counter = 0
 
+func _ready():
+	Global.killedEnemySignal.connect(change_counter)
 
 func _physics_process(delta):
 
@@ -52,8 +53,7 @@ func update_animations(direction):
 func respawn():
 	get_tree().reload_current_scene()
 
-func change_counter():
-	counter = counter+1
-	_label_counter.text = "Enemies killed: " + str(counter)
+func change_counter(killedEnemySignal):
+	_label_counter.text = "Enemies Killed: " + str(Global.enemyKilledCount)
 
 

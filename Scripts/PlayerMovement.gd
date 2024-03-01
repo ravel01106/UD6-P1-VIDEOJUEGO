@@ -6,8 +6,10 @@ const JUMP_VELOCITY = -1200.0
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var _label_counter = $"../CanvasLayer/EnemiesKilledCounter"
 
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var customGravity = 1000
+var counter = 0
 
 func _ready():
 	Global.killedEnemySignal.connect(change_counter)
@@ -52,7 +54,7 @@ func update_animations(direction):
 
 func respawn():
 	get_tree().reload_current_scene()
-
+  
 func change_counter(killedEnemySignal):
 	_label_counter.text = "Enemies Killed: " + str(Global.enemyKilledCount)
 

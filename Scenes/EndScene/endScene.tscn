@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dt60es0xf7bac"]
+[gd_scene load_steps=9 format=3 uid="uid://dt60es0xf7bac"]
 
 [ext_resource type="Script" path="res://Scripts/EndScene.gd" id="1_ajdcj"]
 [ext_resource type="AudioStream" uid="uid://ctodbjk08r6pn" path="res://Assets/Sounds/IntroMenu.mp3" id="2_fx2y3"]
 [ext_resource type="Texture2D" uid="uid://dvusmu4n2qocy" path="res://Assets/Background/primeraCapa.png" id="3_u6thf"]
+[ext_resource type="Script" path="res://Scripts/backgroundMovement.gd" id="4_8g0bn"]
 [ext_resource type="Texture2D" uid="uid://dbelvtym0x75t" path="res://Assets/Background/segundaCapa.png" id="4_ugtw0"]
 [ext_resource type="Texture2D" uid="uid://bvqvxedlpoa8" path="res://Assets/Background/terceraCapa.png" id="5_uwkfq"]
 [ext_resource type="Texture2D" uid="uid://bwmhbdbaisxkd" path="res://Assets/Background/cuartaCapa.png" id="6_riwgp"]
@@ -24,10 +25,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 384.0
-offset_top = 96.0
-offset_right = -384.0
-offset_bottom = -200.0
+offset_left = -1410.0
+offset_top = -825.0
+offset_right = -2178.0
+offset_bottom = -1121.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -36,8 +37,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.0
-offset_bottom = 1.0
+offset_left = -1794.0
+offset_top = -920.0
+offset_right = -1794.0
+offset_bottom = -920.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -107,27 +110,38 @@ transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(1500, 1000)
 texture = ExtResource("3_u6thf")
+script = ExtResource("4_8g0bn")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(1500, 1000)
 texture = ExtResource("4_ugtw0")
+script = ExtResource("4_8g0bn")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(1500, 1000)
 texture = ExtResource("5_uwkfq")
+script = ExtResource("4_8g0bn")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2(1500, 1000)
 texture = ExtResource("6_riwgp")
+script = ExtResource("4_8g0bn")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
 position = Vector2(1500, 1000)
 texture = ExtResource("7_sug88")
+script = ExtResource("4_8g0bn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1220, -596)
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

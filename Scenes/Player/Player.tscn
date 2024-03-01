@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dtkpqjvyaewkr"]
+[gd_scene load_steps=54 format=3 uid="uid://dtkpqjvyaewkr"]
 
 [ext_resource type="Texture2D" uid="uid://bx3l5hk0lxqi8" path="res://Assets/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00000.png" id="1_4mxf2"]
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_yc2ov"]
@@ -49,6 +49,8 @@
 [ext_resource type="Texture2D" uid="uid://bagn7rlyfd6vi" path="res://Assets/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00017.png" id="46_iqyi1"]
 [ext_resource type="Texture2D" uid="uid://ccchwla862ywe" path="res://Assets/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00018.png" id="47_vvl28"]
 [ext_resource type="Texture2D" uid="uid://b3n8c2ybdbq6t" path="res://Assets/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00019.png" id="48_vti24"]
+[ext_resource type="AudioStream" uid="uid://bmh0s1xununtk" path="res://Assets/Sounds/Jump Sound Effect (High Quality).wav" id="50_vhv76"]
+[ext_resource type="AudioStream" uid="uid://cq36efd848k80" path="res://Assets/Sounds/mixkit-footsteps-in-a-tunnel-loop-543.wav" id="51_jgjd4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gt2rs"]
 animations = [{
@@ -223,6 +225,7 @@ size = Vector2(94, 222)
 [node name="Player" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(-566, -238)
 script = ExtResource("1_yc2ov")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
@@ -234,12 +237,28 @@ position = Vector2(0, 35)
 shape = SubResource("RectangleShape2D_g5c58")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -8.00001)
 zoom = Vector2(0.3, 0.3)
+position_smoothing_enabled = true
 
-[node name="Label" type="Label" parent="Player/Camera2D"]
-offset_left = -1859.0
-offset_top = -1037.0
-offset_right = -706.0
-offset_bottom = -830.0
+[node name="JumpAudio" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("50_vhv76")
+volume_db = -23.6
+
+[node name="WalkAudio" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("51_jgjd4")
+volume_db = -12.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+offset = Vector2(1014, 564)
+scale = Vector2(0.4, 0.4)
+transform = Transform2D(0.4, 0, 0, 0.4, 1014, 564)
+
+[node name="EnemiesKilledCounter" type="Label" parent="CanvasLayer"]
+offset_left = -2431.0
+offset_top = -1276.0
+offset_right = -1154.0
+offset_bottom = -1117.0
 theme_override_font_sizes/font_size = 100
-text = "Enemies killed: 0"
+text = "Enemies Killed: 0"

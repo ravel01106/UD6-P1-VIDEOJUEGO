@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b55fdvetm7c2m"]
+[gd_scene load_steps=36 format=3 uid="uid://b55fdvetm7c2m"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_16f26"]
 [ext_resource type="Texture2D" uid="uid://cc5bvtbrct2tk" path="res://Assets/SlimeGreen/SlimeBasic_00000.png" id="1_apymf"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://dc1574mooe1g3" path="res://Assets/SlimeGreen/SlimeBasic_00027.png" id="28_lco0j"]
 [ext_resource type="Texture2D" uid="uid://bdtbr3x35l7n8" path="res://Assets/SlimeGreen/SlimeBasic_00028.png" id="29_7p5aa"]
 [ext_resource type="Texture2D" uid="uid://oc8ghjgn516k" path="res://Assets/SlimeGreen/SlimeBasic_00029.png" id="30_weob2"]
+[ext_resource type="AudioStream" uid="uid://w82q7ibbortd" path="res://Assets/Sounds/deadSound.wav" id="32_5dni3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i4grq"]
 animations = [{
@@ -160,9 +161,17 @@ shape = SubResource("RectangleShape2D_w2xns")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D/Sides"]
 polygon = PackedVector2Array(-112, 96, -144, 56, -149, 25, -144, -32, -121, -35, 120, -35, 144, -24, 149, 20, 144, 56, 112, 96)
 
+[node name="RayCast2D2" type="RayCast2D" parent="CharacterBody2D"]
+position = Vector2(-152, 0)
+target_position = Vector2(-25, 0)
+
 [node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D"]
 position = Vector2(-152, 0)
 target_position = Vector2(0, 120)
+
+[node name="deadAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("32_5dni3")
+volume_db = -10.0
 
 [connection signal="body_entered" from="CharacterBody2D/Top" to="CharacterBody2D" method="_on_top_body_entered"]
 [connection signal="body_entered" from="CharacterBody2D/Sides" to="CharacterBody2D" method="_on_sides_body_entered"]

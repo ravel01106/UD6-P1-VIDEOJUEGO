@@ -7,10 +7,12 @@ extends Control
 @export var start_level = preload("res://Scenes/MainMenu/main_scene.tscn") as PackedScene
 
 func _ready():
+	$MusicMenuAudio.play()
 	start_button.button_down.connect(on_start_pressed)
 	exit_button.button_down.connect(on_exit_pressed)
 
 func on_start_pressed() -> void:
+	$MusicMenuAudio.stop()
 	get_tree().change_scene_to_packed(start_level)
 
 func on_exit_pressed() -> void:
